@@ -16,16 +16,17 @@
 export interface Streamable<T> {
   addElement(input: T): void;
   getNumberElements(): number;
+  get Elements(): T[];
 }
 
 export interface StreamableSearchName<T> {
-  searchName(name: string): T;
+  searchName(name: string): T | undefined;
 }
 
 export interface StreamableSearchCategories<T> {
-  searchCategories(category: string): T[];
+  searchCategories(category: string): T[] | undefined;
 }
 
 export interface StreamableSearchYear<T> {
-  searchYear(year: number): T[];
+  searchYear(year: number): T[] | undefined;
 }

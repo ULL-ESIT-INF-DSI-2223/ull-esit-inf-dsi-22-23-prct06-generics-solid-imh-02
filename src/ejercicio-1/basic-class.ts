@@ -25,7 +25,7 @@ export abstract class BasicStreamableCollection<T>
   constructor (private elements: T[]) {
   }
 
-  addElement(input: T): string {
+  addElement(input: T): void {
     this.elements.push(input);
   }
 
@@ -33,7 +33,11 @@ export abstract class BasicStreamableCollection<T>
     return this.elements.length;
   }
 
-  abstract searchName(name: string): T;
-  abstract searchCategories(category: string): T;
-  abstract searchYear(year: number): T;
+  get Elements(): T[] {
+    return this.Elements;
+  }
+
+  abstract searchName(name: string): T | undefined;
+  abstract searchCategories(category: string): T[] | undefined;
+  abstract searchYear(year: number): T[] | undefined;
 }

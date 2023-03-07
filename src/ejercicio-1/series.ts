@@ -35,4 +35,50 @@ export class SeriesCollection extends BasicStreamableCollection<Serie> {
     super(seriesList);
   }
   
+  searchCategories(category: string): Serie[] | undefined{
+    const result: Serie[] = [];
+    this.Elements.forEach((serie) => {
+      serie.categories.forEach((category_) =>{
+        if (category === category_) {
+          result.push(serie);
+        }
+      });
+    });
+
+    if (result.length > 0) {
+      return result;
+    } else {
+      return undefined;
+    }
+  }
+
+  searchName(name: string): Serie | undefined {
+    let serie_aux: Serie = new Serie("", [], 0);
+    let flag = false;
+    this.Elements.forEach((serie) => {
+      if (serie.name === name) {
+        serie_aux = serie;
+        flag = true;
+      }
+    });
+    if (flag !== false) {
+      return serie_aux;
+    }
+    return undefined;
+  }
+
+  searchYear(year: number): Serie[] | undefined {
+    const result: Serie[] = [];
+    this.Elements.forEach((serie) => {
+      if(serie.year === year) {
+        result.push(serie);
+      }
+    });
+    if (result.length > 0) {
+      return result;
+    } else {
+      return undefined;
+    }
+  }
+
 }
