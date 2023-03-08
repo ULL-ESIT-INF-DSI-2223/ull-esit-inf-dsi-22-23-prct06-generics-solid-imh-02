@@ -14,5 +14,5 @@ export interface Printable<T> {
     /**
      * Método para imprimir lo que hay en la colección 
      */
-    print(): string; // duda
+    print(): string; 
 }
