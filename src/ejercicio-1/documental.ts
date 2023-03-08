@@ -10,9 +10,17 @@
  * @date 12/03/2023
  */
 
-export class Pelicula {
-  // Añadido el país de la película
-  constructor (private name_: string, private categories_: string[], private year_: number, private countries_: string[]) {
+/**
+ * Clase que representa un documental con sus propiedades
+ */
+export class Documental {
+  /**
+   * Constructor que determina las propiedades de un documental
+   * @param name_ Nombre del documental
+   * @param categories_ Categorías del documental
+   * @param year_ Año del documental
+   */
+  constructor (private name_: string, private categories_: string[], private year_: number) {
 
   }
 
@@ -26,9 +34,5 @@ export class Pelicula {
 
   get year () {
     return this.year_;
-  }
-
-  get countries() {
-    return this.countries_;
   }
 }
