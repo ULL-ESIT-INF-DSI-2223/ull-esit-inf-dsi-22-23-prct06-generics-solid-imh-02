@@ -12,12 +12,12 @@
 
 import 'mocha';
 import {expect} from 'chai';
-import { Serie } from '../../src/ejercicio-1/series';
+import { Serie } from '../../src/ejercicio-1/serie';
 
 describe('Getters de la clase serie', () => {
   const loki = new Serie("Loki", ["ciencia ficción", "superhéroes"], 2021);
 
-  it("Getter del nombre de loki resulta 'loki' ", () => {
+  it("Getter del nombre de loki resulta 'Loki' ", () => {
     expect(loki.name).to.be.eql("Loki");
   });
 

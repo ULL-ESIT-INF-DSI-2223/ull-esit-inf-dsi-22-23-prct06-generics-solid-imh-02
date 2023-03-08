@@ -11,31 +11,14 @@
  */
 
 import { BasicStreamableCollection } from "./basic-class";
-
-export class Serie {
-  constructor (private name_:string, private categories_: string[], private year_: number) {
-
-  }
-
-  get name() {
-    return this.name_;
-  }
-
-  get categories() {
-    return this.categories_;
-  }
-
-  get year () {
-    return this.year_;
-  }
-}
+import { Serie } from "./serie";
 
 export class SeriesCollection extends BasicStreamableCollection<Serie> {
   constructor(seriesList: Serie[]) {
     super(seriesList);
   }
   
-  searchCategories(category: string): Serie[] | undefined{
+  searchCategories(category: string): Serie[] | undefined {
     const result: Serie[] = [];
     this.Elements.forEach((serie) => {
       serie.categories.forEach((category_) =>{

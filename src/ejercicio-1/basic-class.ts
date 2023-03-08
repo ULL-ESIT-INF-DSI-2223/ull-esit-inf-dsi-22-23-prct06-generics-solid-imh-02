@@ -34,7 +34,7 @@ export abstract class BasicStreamableCollection<T>
   }
 
   get Elements(): T[] {
-    return this.Elements;
+    return this.elements;
   }
 
   abstract searchName(name: string): T | undefined;
