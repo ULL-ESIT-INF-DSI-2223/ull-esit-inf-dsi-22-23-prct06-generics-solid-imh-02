@@ -24,14 +24,23 @@ export class Documental {
 
   }
 
+  /**
+   * Getter del nombre de un documental
+   */
   get name() {
     return this.name_;
   }
 
+  /**
+   * Getter de las categorías de un documental
+   */
   get categories() {
     return this.categories_;
   }
 
+  /**
+   * Getter del año de un documental
+   */
   get year () {
     return this.year_;
   }

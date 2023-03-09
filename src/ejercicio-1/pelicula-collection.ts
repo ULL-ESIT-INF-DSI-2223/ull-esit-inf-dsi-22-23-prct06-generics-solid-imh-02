@@ -13,6 +13,9 @@
 import { BasicStreamableCollection } from "./basic-class";
 import { Pelicula } from "./pelicula";
 
+/**
+ * Clase que permite representar una colección de películas
+ */
 export class PeliculasCollection extends BasicStreamableCollection<Pelicula> {
   constructor(peliculasList: Pelicula[]) {
     super(peliculasList);
