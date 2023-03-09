@@ -11,33 +11,90 @@
  */
 
 export class Collection<T> {
-  constructor (private element: T[]) {
+  constructor (private elements_: T[]) {
 
   }
 
-  append<U>(otherCollection: T[]) {
-    const result: T[] = [];
-    this.element.forEach((element1) => {
-      result.push(element1);
-    });
-    otherCollection.forEach((element2) => {
-      result.push(element2);
-    });
+  get elements() {
+    return this.elements_;
+  }
+
+  push(element: T) {
+    this.elements_[this.length()] = element;
+    return this.elements_;
+  }
+
+  append(otherCollection: Collection<T>) {
+    const collection = otherCollection.elements;
+    for (let i = 0; i < otherCollection.length(); ++i) {
+      this.push(collection[i]);
+    }
+    return this.elements_;
+  }
+
+  length() {
+    let i = 0;
+    while (this.elements_[i] !== undefined) {
+      ++i;
+    }
+    return i;
+  }
+
+  at(index: number): T | undefined {
+    if (index >= 0 && index <= this.length()) {
+      return this.elements_[index];
+    }
+    return undefined;
+  }
+
+  concatenate(...otherCollections: Collection<T>[]) {
+    const result = new Collection<T>(this.elements);
+    let i = 0;
+    while (otherCollections[i] !== undefined) {
+      result.append(otherCollections[i]);
+      ++i;
+    }
+    return result;
+  } 
+
+  filter(callback_function: (element: T) => boolean) {
+    const result = new Collection<T>([]);
+    for(let i = 0; i < this.length(); ++i) {
+      if (callback_function(this.elements_[i])) {
+        result.push(this.elements_[i]);
+      }
+    }
     return result;
   }
 
-  concatenate(...otherCollections: T[]) {
-    const result = [];
-    this.element.forEach((element1) => {
-      result.push(element1);
-    });
 
-    otherCollections.forEach((collection) => {
-      collection.forEach((element2) => {
-        result.push(element2);
-      });
-    })
-
-
+  map(callback_function: (item: T) => T) {
+    const result = new Collection<T>([]);
+    for(let i = 0; i < this.length(); ++i) {
+      result.push(callback_function(this.elements_[i]));
+    } 
+    return result;
   }
+
+  reduce(callback_function: (acumulador: T, item: T) => T, initial: T) {
+    for(let i = 0; i < this.length(); ++i) {
+      initial = callback_function(initial, this.elements_[i]);
+    } 
+    return initial;
+  }
+
+  reverse() {
+    const result = new Collection<T>([]);
+    for(let i = this.length(); i >= 0; --i) {
+      result.push(this.elements_[i]);
+    }
+    return result;
+  }
+
+  forEach(callback_function: (element: T) => void) {
+    for(let i = 0; i < this.length(); ++i) {
+      callback_function(this.elements_[i]);
+    } 
+  }
+
 }
