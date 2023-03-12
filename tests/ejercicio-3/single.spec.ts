@@ -28,10 +28,6 @@ describe('Getter y setters de un single', () => {
     expect(single1.anio_publicacion).to.be.eql(2023);
   });
 
-  it("Getter de la canción del single", () => {
-    expect(single1.cancion).to.be.eql(cancion1);
-  });
-
   it("Getter de las versiones del single", () => {
     expect(single1.versiones).to.be.eql([cancion1, version2]);
   });

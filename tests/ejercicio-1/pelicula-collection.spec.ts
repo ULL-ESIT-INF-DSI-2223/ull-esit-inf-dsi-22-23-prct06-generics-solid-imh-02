@@ -15,7 +15,7 @@ import {expect} from 'chai';
 import {PeliculasCollection} from '../../src/ejercicio-1/pelicula-collection'
 import { Pelicula } from '../../src/ejercicio-1/pelicula';
 
-describe('Métodos de una colección de series', () => {
+describe('Métodos de una colección de películas', () => {
   const AntMan = new Pelicula("Ant-Man", ["acción", "súperhéroes"], 2023, ["EEUU", "Turquía"]);
   const Avatar = new Pelicula("Avatar-El camino del agua", ["ciencia ficción", "aventura"], 2022, ["EEUU"]);
   const EndGame = new Pelicula("Avengers Endgame", ["súperhéroes", "acción"], 2019, ["EEUU"]);

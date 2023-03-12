@@ -14,7 +14,7 @@ import 'mocha';
 import {expect} from 'chai';
 import {Documental} from '../../src/ejercicio-1/documental'
 
-describe('Getters de la clase serie', () => {
+describe('Getters de la clase documental', () => {
   const animales1 = new Documental("Animales1", ["sabana", "selva"], 2021);
 
   it("Getter del nombre de animales1 resulta 'Animales1' ", () => {

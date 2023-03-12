@@ -15,18 +15,15 @@ import { Cancion } from "./cancion";
 export class Single {
   private nombre_: string;
   private anio_publicacion_: number;
-  private cancion_: Cancion;
   private versiones_: Cancion[];
 
   constructor(nombre: string, año_publicacion: number, cancion: Cancion, versiones: Cancion[]) {
     this.nombre_ = nombre;
     this.anio_publicacion_ = año_publicacion;
-    this.cancion_ = cancion;
     this.versiones_ = versiones;
   }
 
   get nombre() {return this.nombre_;}
   get anio_publicacion() {return this.anio_publicacion_;}
-  get cancion() {return this.cancion_;}
   get versiones() {return this.versiones_;}
 }
