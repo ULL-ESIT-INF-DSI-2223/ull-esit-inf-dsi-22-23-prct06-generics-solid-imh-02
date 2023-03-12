@@ -10,7 +10,7 @@ Ismael Martín Herrera *alu0101397375@ull.edu.es*
 4. [Ejercicio 2](#ejercicio-2)
 5. [Ejercicio 3](#ejercicio-3)
 6. [Ejercicio modificación](#ejercicio-modificación)
-7. [Conclusión]()
+7. [Conclusión](#conclusión)
 8. [Referencias]()
 
 ## Introducción 
@@ -929,3 +929,7 @@ Las expectativas en las que basa el código desarrollado anteriormente, resultan
     ✔ Método getItem(1) resulta 3
     ✔ Método print() resulta '1,2,3,4,5,6'
 ```
+
+## Conclusión
+
+En esta práctica he profundizado en las clases e interfaces genéricas, así como los principios SOLID. En este sentido, quizás destacar que programar siguiendo los principios SOLID, en un principio, cuesta un poco porque tienes que cambiar el modo de pensar a la hora de programa. Sin embargo, por ejemplo en el ejercicio 1 se simplifica bastante el diseño de las interfaces y su implementación posterior, debido a que se divide en cuatro interfaces. 
