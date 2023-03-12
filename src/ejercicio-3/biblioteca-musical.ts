@@ -67,7 +67,7 @@ export class BibliotecaMusical_ {
     let nombre_disco = "";
     let flag = false;
     this.artistas_.forEach((artista) => {
-      artista.discografia.forEach((disco) => {
+      artista.discografia.Discografia.forEach((disco) => {
         if (entradaDisco.nombre === disco.nombre) {
           nombre_disco = disco.nombre;
           flag = true;
@@ -91,7 +91,7 @@ export class BibliotecaMusical_ {
     let flag = false;
     let nombre_cancion = "";
     this.artistas_.forEach((artista) => {
-      artista.discografia.forEach((disco) => {
+      artista.discografia.Discografia.forEach((disco) => {
         disco.canciones.forEach((cancion) => {
           if (entradaCancion.nombre === cancion.nombre) {
             console.table(cancion);
@@ -117,7 +117,7 @@ export class BibliotecaMusical_ {
     let flag = false;
     let numero_canciones = 0;
     this.artistas_.forEach((artista) => { // Buscamos si el disco está entre las artista de la biblioteca
-      artista.discografia.forEach((discoElement) =>{
+      artista.discografia.Discografia.forEach((discoElement) =>{
         if(discoElement.nombre === disco.nombre) {
           flag = true;
           numero_canciones = discoElement.canciones.length;
@@ -140,7 +140,7 @@ export class BibliotecaMusical_ {
     let flag = false;
     let duracion_total = 0;
     this.artistas_.forEach((artista) => { // Buscamos si el disco está entre las artista de la biblioteca
-      artista.discografia.forEach((discoElement) =>{
+      artista.discografia.Discografia.forEach((discoElement) =>{
         if(discoElement.nombre === disco.nombre) {
           flag = true;
           discoElement.canciones.forEach((cancion) => {
@@ -165,12 +165,12 @@ export class BibliotecaMusical_ {
     let flag = false;
     let reproducciones_totales = 0;
     this.artistas_.forEach((artista) => { // Buscamos si el disco está entre las artista de la biblioteca
-      artista.discografia.forEach((discoElement) =>{
+      artista.discografia.Discografia.forEach((discoElement) =>{
         if(discoElement.nombre === disco.nombre) {
           flag = true;
-          discoElement.canciones.forEach((cancion) => {
+          discoElement.canciones.forEach((cancion) =>{
             reproducciones_totales += cancion.numero_reproducciones;
-          });
+          })
         }
       });
     });

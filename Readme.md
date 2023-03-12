@@ -11,23 +11,22 @@ Ismael Martín Herrera *alu0101397375@ull.edu.es*
 5. [Ejercicio 3](#ejercicio-3)
 6. [Ejercicio modificación](#ejercicio-modificación)
 7. [Conclusión](#conclusión)
-8. [Referencias]()
+8. [Referencias](#referencias)
 
 ## Introducción 
 
-En esta pŕactica 6 se hace uso de las clases e interfaces genéricas en TypeScript. Asimismo, también se hace uso los principios SOLID para el desarrollo de la misma. Finalmente, cabe destacar que en esta práctica también he agregado dos nuevas herramientas de desarrollo, en primer lugar, [Istanbul](https://istanbul.js.org/) para gestionar el cubrimiento de pruebas del desarrollo. Y en segundo lugar, [Coveralls](https://coveralls.io/). 
+En esta pŕactica 6 se hace uso de las clases e interfaces genéricas en TypeScript. Asimismo, también se hace uso los principios SOLID para el desarrollo de la misma. Finalmente, cabe destacar que en esta práctica también he agregado dos nuevas herramientas de desarrollo, en primer lugar, [Instanbul](https://istanbul.js.org/) para gestionar el cubrimiento de pruebas del desarrollo. Y en segundo lugar, [Coveralls](https://coveralls.io/). 
 
 ## Instalación y configuración de Instanbul y Coveralls 
 
 Tal y como he expuesto previamente en esta práctica he incorporado dos nuevas herramientas para el desarrollo.
 
-### Istanbul: 
+Para la incorporación de ambas herramientas he seguido los pasos expuestos en el vídeo de referencia en el campus virtual. 
 
-TODO
+### Instanbul
 
-### Coveralls: 
-
-TODO
+Instalación de dependencias: ```npm install --save-dev nyc coveralls```
+Adición de script en el fichero ```package.json```, añadiendo la línea: ```"coverage": "nyc npm test"```, para la generación del correspondiente informe de cubrimiento. 
 
 ## Ejercicio 1
 
@@ -769,7 +768,80 @@ Este permite recorrer la lista actual, para lo que recorro la misma y llamo a la
 
 ## Ejercicio 3
 
-TODO
+En el ejercicio 3 se pide revisar si la implementación de la biblioteca musical en la práctica 5 cumple con los principios SOLID, los cuáles tras revisar la misma, considero que los cumple. Asimismo, también se pedía desarrollar una clase single, para diferenciar un single de un disco. Esta nueva clase basa su funcionamiento en unas expectativas, cuyos resultados son los siguientes: 
+
+```
+  Getter y setters de un single
+    ✔ Getter del nombre, resulta 'Single1' 
+    ✔ Getter del año de publicación resulta 2023
+    ✔ Getter de las versiones del single
+```
+
+```ts
+export class Single {
+  private nombre_: string;
+  private anio_publicacion_: number;
+  private canciones_: Cancion[];
+
+  /**
+   * Constructor de la clase single
+   * @param nombre Nombre del single
+   * @param año_publicacion Año de publicación del single
+   * @param versiones Versiones de la canción 
+   */
+  constructor(nombre: string, año_publicacion: number, versiones: Cancion[]) {
+    this.nombre_ = nombre;
+    this.anio_publicacion_ = año_publicacion;
+    this.canciones_ = versiones;
+  }
+
+  /**
+   * Getter del nombre
+   */
+  get nombre() {return this.nombre_;}
+
+  /**
+   * Getter del año de publicación 
+   */
+  get anio_publicacion() {return this.anio_publicacion_;}
+
+  /**
+   * Getter de las versiones del single
+   */
+  get canciones() {return this.canciones_;}
+}
+```
+
+Por otra parte, se pide la creación de una clase genérica ```Discografia<T>```, que permita que una discografía esté formada por Discos, Singles, o Discos y Singles. Esta nueva clase basa su funcionamiento en una serie de pruebas, cuyo resultado es el siguiente: 
+
+```
+  Getter de una discografía
+    ✔ Getter de la discografía con un single y un disco
+    ✔ Getter de la discografía con un single 
+    ✔ Getter de la discografía con un disco 
+```
+
+```ts
+export class Discografia<T extends Disco | Single> {
+
+  /**
+   * Constructor de la clase
+   * @param discografia_ Recibe un array de Discos, Singles o Discos y Singles
+   */
+  constructor(private discografia_: T[]) {
+
+  }
+
+  /**
+   * Getter de toda la discografía
+   */
+  get Discografia() {
+    return this.discografia_;
+  }
+}
+```
+
+Cabe destacar que he realizado algunas modificaciones tanto en las clases ```Artista``` y ```BibliotecaMusical```, así como en sus respectivas expectativas. 
 
 ## Ejercicio modificación
 
@@ -933,3 +1005,9 @@ Las expectativas en las que basa el código desarrollado anteriormente, resultan
 ## Conclusión
 
 En esta práctica he profundizado en las clases e interfaces genéricas, así como los principios SOLID. En este sentido, quizás destacar que programar siguiendo los principios SOLID, en un principio, cuesta un poco porque tienes que cambiar el modo de pensar a la hora de programa. Sin embargo, por ejemplo en el ejercicio 1 se simplifica bastante el diseño de las interfaces y su implementación posterior, debido a que se divide en cuatro interfaces. 
+
+## Referencias
+
+[Vídeo Instanbul y Coveralls](https://drive.google.com/file/d/1xLDc4CpoYpsAlCFO_4DMwu7MKCtcZDnh/view)
+
+[Guión de la práctica 6](https://ull-esit-inf-dsi-2223.github.io/prct06-generics-solid/)

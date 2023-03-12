@@ -12,18 +12,38 @@
 
 import { Cancion } from "./cancion";
 
+/**
+ * Clase que permite representar un single
+ */
 export class Single {
   private nombre_: string;
   private anio_publicacion_: number;
-  private versiones_: Cancion[];
+  private canciones_: Cancion[];
 
-  constructor(nombre: string, año_publicacion: number, cancion: Cancion, versiones: Cancion[]) {
+  /**
+   * Constructor de la clase single
+   * @param nombre Nombre del single
+   * @param año_publicacion Año de publicación del single
+   * @param versiones Versiones de la canción 
+   */
+  constructor(nombre: string, año_publicacion: number, versiones: Cancion[]) {
     this.nombre_ = nombre;
     this.anio_publicacion_ = año_publicacion;
-    this.versiones_ = versiones;
+    this.canciones_ = versiones;
   }
 
+  /**
+   * Getter del nombre
+   */
   get nombre() {return this.nombre_;}
+
+  /**
+   * Getter del año de publicación 
+   */
   get anio_publicacion() {return this.anio_publicacion_;}
-  get versiones() {return this.versiones_;}
+
+  /**
+   * Getter de las versiones del single
+   */
+  get canciones() {return this.canciones_;}
 }

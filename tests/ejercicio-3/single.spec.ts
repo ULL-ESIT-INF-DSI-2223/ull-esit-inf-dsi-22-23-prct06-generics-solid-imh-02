@@ -19,7 +19,7 @@ import {Single} from '../../src/ejercicio-3/single'
 describe('Getter y setters de un single', () => {
   const cancion1 = new Cancion("Cancion1", 180, ["pop"], true, 1000000);
   const version2 = new Cancion("Version2", 185, ["pop"], true, 5000);
-  const single1 = new Single("Single1", 2023, cancion1, [cancion1, version2]);
+  const single1 = new Single("Single1", 2023,[cancion1, version2]);
   it("Getter del nombre, resulta 'Single1' ", () => {
     expect(single1.nombre).to.be.eql("Single1");
   });
@@ -29,6 +29,6 @@ describe('Getter y setters de un single', () => {
   });
 
   it("Getter de las versiones del single", () => {
-    expect(single1.versiones).to.be.eql([cancion1, version2]);
+    expect(single1.canciones).to.be.eql([cancion1, version2]);
   });
 });

@@ -11,6 +11,8 @@
  */
 
 import { Disco } from "./disco";
+import { Discografia } from "./discografia";
+import { Single } from "./single";
 
 /**
  * Clase que representa todas las propiedades de un artista.
@@ -21,9 +23,9 @@ import { Disco } from "./disco";
 export class Artista {
   private nombre_: string;
   private numero_oyentes_ : number;
-  private discografia_: Disco[];
+  private discografia_: Discografia<Disco | Single>;
 
-  constructor(nombre: string, numero_oyentes: number, discografia: Disco[]) {
+  constructor(nombre: string, numero_oyentes: number, discografia:  Discografia<Disco | Single>) {
     this.nombre_ = nombre;
     this.numero_oyentes_ = numero_oyentes;
     this.discografia_ = discografia;

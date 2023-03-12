@@ -16,6 +16,8 @@ import {BibliotecaMusical_} from '../../src/ejercicio-3/biblioteca-musical';
 import {Artista} from '../../src/ejercicio-3/artista';
 import {Cancion} from '../../src/ejercicio-3/cancion';
 import {Disco} from '../../src/ejercicio-3/disco';
+import { Single } from '../../src/ejercicio-3/single';
+import { Discografia } from '../../src/ejercicio-3/discografia';
 
 describe('Biblioteca Musical', () => {
   const biblioteca1 = new BibliotecaMusical_;
@@ -30,10 +32,18 @@ describe('Biblioteca Musical', () => {
   const Disco1 = new Disco("disco1", 2010, [cancion1, cancion2]);
   const Disco2 = new Disco("disco2", 2020, []);
   const Disco3 = new Disco("disco3", 2022, [cancion3, cancion4]);
+
+  // Discografía
+  const single1 = new Single("single1", 2023, [cancion3, cancion4]);
+
+  const discografia1 = new Discografia([Disco1, single1, Disco2, Disco3]);
+  const discografia2 = new Discografia([single1]);
+  const discografia3 = new Discografia([Disco1, Disco3]);
+
   // Artistas
-  const Artista1 = new Artista("artista1", 200, [Disco1]);
-  const Artista2 = new Artista("artista2", 300, [Disco2, Disco3]);
-  const Artista3 = new Artista("artista3", 300, [Disco2]);
+  const Artista1 = new Artista("artista1", 200, discografia1);
+  const Artista2 = new Artista("artista2", 300, discografia2);
+  const Artista3 = new Artista("artista3", 300, discografia3);
 
   // Añadir un artista
   it("Funcionalidad para añadir Artista1 y Artista2 ", () => {
