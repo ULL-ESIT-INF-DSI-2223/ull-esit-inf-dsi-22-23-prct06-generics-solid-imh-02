@@ -3,7 +3,9 @@
     "./src/ejercicio*.ts",
     "./src/ejercicios-modif/*.ts",
     "./src/ejercicio-1/*.ts",
-    "./src/ejercicio-2/*.ts"
+    "./src/ejercicio-2/*.ts",
+    "./src/ejercicio-3/*.ts",
+    "./src/ejercicio-modif/*.ts"
   ],
   "out": "./docs"
 }
