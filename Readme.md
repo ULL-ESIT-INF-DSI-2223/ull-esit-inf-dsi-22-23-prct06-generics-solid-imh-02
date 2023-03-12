@@ -2,6 +2,8 @@
 
 Ismael Martín Herrera *alu0101397375@ull.edu.es*
 
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct06-generics-solid-imh-02/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct06-generics-solid-imh-02?branch=master)
+
 ## índice 
 
 1. [Introducción](#introducción)
